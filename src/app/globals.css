@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f4f5f9;
+  --color-brand-100: #e2e5f0;
+  --color-brand-200: #c6ccdf;
+  --color-brand-300: #a4adc7;
+  --color-brand-400: #7f8ab1;
+  --color-brand-500: #4b587f;
+  --color-brand-600: #3a476c;
+  --color-brand-700: #2f3958;
+  --color-brand-800: #242b43;
+  --color-brand-900: #1b2033;
+  --color-brand-950: #121523;
+
+  --color-night: #ffffff;
+  --color-night-light: #f2f3f7;
+  --color-night-lighter: #e9ebf2;
+
+  --font-poppins: "Poppins", sans-serif;
+  --font-sans: var(--font-poppins);
+  --font-serif: var(--font-poppins);
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: var(--color-brand-950);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply font-sans antialiased selection:bg-brand-500 selection:text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 18px 2px rgba(75, 88, 127, 0.35);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow-effect:hover {
+    box-shadow: 0 0 28px 5px rgba(75, 88, 127, 0.55);
+  }
+}
