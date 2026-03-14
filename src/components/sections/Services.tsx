@@ -49,7 +49,7 @@ const services = [
 const Services = () => {
     return (
         <section id="expertise" className="py-24 md:py-32 neumorph-base overflow-hidden">
-            <div className="container mx-auto px-6">
+            <div className="max-w-[1500px] mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}

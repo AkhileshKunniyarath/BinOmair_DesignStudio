@@ -15,7 +15,7 @@ const Hero = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#e0e5ec] via-[#e0e5ec]/80 to-transparent z-[1]" />
 
-            <div className="container relative z-10 mx-auto px-6 pt-32 pb-20">
+            <div className="max-w-[1500px] relative z-10 mx-auto px-6 pt-32 pb-20">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     {/* Left content */}
                     <div>
@@ -82,7 +82,7 @@ const Hero = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                         <div className="absolute bottom-10 left-10 text-white">
                             <p className="text-[0.6rem] uppercase tracking-[0.4em] font-black mb-2 opacity-80">Featured Project</p>
-                            <h3 className="text-3xl font-bold">Sacred Architecture</h3>
+                            <h3 className="text-3xl font-bold text-white">Sacred Architecture</h3>
                         </div>
                     </motion.div>
                 </div>

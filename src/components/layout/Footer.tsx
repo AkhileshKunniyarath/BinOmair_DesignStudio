@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, ArrowRight, Instagram, Facebook, MessageCircle } f
 const Footer = () => {
     return (
         <footer className="neumorph-base pt-12 pb-6 border-none">
-            <div className="container mx-auto px-6">
+            <div className="max-w-[1500px] mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-10">
 
                     {/* Brand Info */}

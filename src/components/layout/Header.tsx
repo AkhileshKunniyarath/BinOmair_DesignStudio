@@ -23,7 +23,7 @@ const Header = () => {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-full max-w-[1300px] neumorph-flat rounded-[30px] py-1.5 px-4 sm:px-6"
+                className="w-full max-w-[1400px] neumorph-flat rounded-[30px] py-1.5 px-4 sm:px-6"
             >
                 <div className="flex justify-between items-center">
                     {/* Logo Section */}

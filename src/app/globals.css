@@ -24,23 +24,28 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: var(--color-brand-950);
+    --background: #e0e5ec;
+    --foreground: #121523;
   }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
-    @apply font-sans antialiased selection:bg-brand-500 selection:text-white;
+    @apply font-sans antialiased;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-serif;
+  /* Define standard container constraints for production reliability */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    max-width: 1500px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold text-brand-950;
   }
 }
 

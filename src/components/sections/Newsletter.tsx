@@ -50,7 +50,7 @@ const Newsletter = () => {
                 <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-brand-500/5 blur-3xl" />
             </div>
 
-            <div id="contact" className="container mx-auto px-6 relative z-10 max-w-3xl text-center">
+            <div id="contact" className="max-w-[1500px] mx-auto px-6 relative z-10 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}

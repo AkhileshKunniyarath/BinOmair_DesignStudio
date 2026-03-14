@@ -60,7 +60,7 @@ const Portfolio = () => {
 
     return (
         <section id="sacred-works" className="neumorph-base">
-            <div className="py-20 md:py-28 container mx-auto px-6 text-center">
+            <div className="py-20 md:py-28 max-w-[1500px] mx-auto px-6 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ const Portfolio = () => {
                 </motion.div>
             </div>
 
-            <div className="container mx-auto px-6 pb-20 md:pb-28">
+            <div className="max-w-[1500px] mx-auto px-6 pb-20 md:pb-28">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {projects.map((project, i) => (
                         <motion.button

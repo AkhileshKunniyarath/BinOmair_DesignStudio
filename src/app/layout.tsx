@@ -26,7 +26,7 @@ export default function RootLayout({
       <body
         className={cn(
           poppins.variable,
-          "min-h-screen bg-white text-brand-950 font-sans antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden"
+          "min-h-screen neumorph-base text-brand-950 font-sans antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden"
         )}
         style={{ fontFamily: "var(--font-poppins), sans-serif" }}
       >
