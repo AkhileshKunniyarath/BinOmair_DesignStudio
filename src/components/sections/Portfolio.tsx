@@ -10,7 +10,7 @@ const projects = [
         location: "Kochi",
         type: "Church Interior",
         year: "2025",
-        image: "https://images.unsplash.com/photo-Ti2BQgR8eng?auto=format&fit=crop&w=2000&q=80",
+        image: "/projects/church-michael.png",
         alt: "Colorful church interior with stained glass",
     },
     {
@@ -18,7 +18,7 @@ const projects = [
         location: "Calicut",
         type: "Mosque Interior",
         year: "2024",
-        image: "https://images.unsplash.com/photo-iB54dVWYkK4?auto=format&fit=crop&w=2000&q=80",
+        image: "/projects/mosque-noor.png",
         alt: "Mosque interior with chandeliers and blue carpet",
     },
     {
@@ -26,7 +26,7 @@ const projects = [
         location: "Thrissur",
         type: "Villa Interior",
         year: "2025",
-        image: "https://images.pexels.com/photos/7347375/pexels-photo-7347375.jpeg?cs=srgb&dl=pexels-silver-works-909675-7347375.jpg&fm=jpg",
+        image: "/modern-staircase.png",
         alt: "Colorful modern living room interior",
     },
     {
@@ -34,7 +34,7 @@ const projects = [
         location: "Malappuram",
         type: "Mosque Annex",
         year: "2023",
-        image: "https://images.unsplash.com/photo-iB54dVWYkK4?auto=format&fit=crop&w=2000&q=80",
+        image: "/projects/mosque-courtyard.png",
         alt: "Mosque interior with blue carpet",
     },
     {
@@ -42,7 +42,7 @@ const projects = [
         location: "Kannur",
         type: "Church Atrium",
         year: "2024",
-        image: "https://images.unsplash.com/photo-Ti2BQgR8eng?auto=format&fit=crop&w=2000&q=80",
+        image: "/projects/church-gallery.png",
         alt: "Stained glass church interior",
     },
     {
@@ -50,7 +50,7 @@ const projects = [
         location: "Kottayam",
         type: "Villa Interior",
         year: "2025",
-        image: "https://images.pexels.com/photos/7347375/pexels-photo-7347375.jpeg?cs=srgb&dl=pexels-silver-works-909675-7347375.jpg&fm=jpg",
+        image: "/projects/villa-palm.png",
         alt: "Bright villa lounge interior",
     },
 ];
@@ -59,7 +59,7 @@ const Portfolio = () => {
     const [selected, setSelected] = useState<typeof projects[0] | null>(null);
 
     return (
-        <section id="sacred-works" className="bg-white">
+        <section id="sacred-works" className="neumorph-base">
             <div className="py-20 md:py-28 container mx-auto px-6 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -69,13 +69,14 @@ const Portfolio = () => {
                 >
                     <h2 className="text-xs tracking-[0.35em] text-brand-500 uppercase font-semibold mb-4">Sacred Works</h2>
                     <h3 className="text-4xl md:text-5xl font-serif text-brand-950">
-                        Curated <span className="text-brand-500">Portfolio</span>
+                        Curated <br />
+                        <span className="text-brand-500">Portfolio</span>
                     </h3>
                 </motion.div>
             </div>
 
             <div className="container mx-auto px-6 pb-20 md:pb-28">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {projects.map((project, i) => (
                         <motion.button
                             key={project.title}
@@ -84,7 +85,7 @@ const Portfolio = () => {
                             viewport={{ once: true, margin: "-80px" }}
                             transition={{ duration: 0.7, delay: i * 0.05 }}
                             onClick={() => setSelected(project)}
-                            className="group text-left rounded-3xl border border-brand-200/60 overflow-hidden bg-white shadow-[0_20px_60px_-45px_rgba(0,0,0,0.35)]"
+                            className="group text-left rounded-[25px] overflow-hidden neumorph-flat"
                         >
                             <div className="relative h-48 overflow-hidden">
                                 <img

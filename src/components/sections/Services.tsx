@@ -48,7 +48,7 @@ const services = [
 
 const Services = () => {
     return (
-        <section id="expertise" className="py-24 md:py-32 bg-brand-50 border-y border-brand-100 overflow-hidden">
+        <section id="expertise" className="py-24 md:py-32 neumorph-base overflow-hidden">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -58,10 +58,10 @@ const Services = () => {
                     className="text-center mb-16 md:mb-24"
                 >
                     <h2 className="text-xs tracking-[0.35em] text-brand-500 uppercase font-semibold mb-4">Expertise</h2>
-                    <h3 className="text-4xl md:text-5xl font-serif text-brand-950">Design Studio <span className=" text-brand-500">Services</span></h3>
+                    <h3 className="text-4xl md:text-5xl font-serif text-brand-950">Design Studio <br /><span className=" text-brand-500">Services</span></h3>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {services.map((service, index) => {
                         const Icon = service.icon;
 
@@ -73,7 +73,7 @@ const Services = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ amount: 0.2 }}
                                 transition={{ duration: 0.7, delay: index * 0.05 }}
-                                className="rounded-3xl border border-brand-200/60 bg-white p-7 shadow-[0_20px_60px_-45px_rgba(0,0,0,0.4)]"
+                                className="rounded-[30px] neumorph-flat p-10"
                             >
                                 <div className={`h-14 w-14 rounded-2xl bg-gradient-to-br ${service.accent} flex items-center justify-center text-brand-700 mb-6`}>
                                     <Icon size={26} />

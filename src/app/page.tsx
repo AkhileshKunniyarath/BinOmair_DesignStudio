@@ -9,7 +9,7 @@ import Newsletter from "@/components/sections/Newsletter";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white selection:bg-brand-500 selection:text-white">
+    <main className="min-h-screen neumorph-base selection:bg-brand-500 selection:text-white">
       <Header />
       <Hero />
       <About />

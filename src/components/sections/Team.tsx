@@ -17,7 +17,7 @@ const values = [
 
 const Team = () => {
     return (
-        <section className="py-24 md:py-32 bg-brand-950 relative overflow-hidden">
+        <section className="py-24 md:py-32 neumorph-base relative overflow-hidden">
             <div className="container mx-auto px-6 max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -26,11 +26,11 @@ const Team = () => {
                     transition={{ duration: 0.8 }}
                     className="mb-16"
                 >
-                    <h2 className="text-xs tracking-[0.35em] text-brand-400 uppercase font-semibold mb-4">The People</h2>
-                    <h3 className="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
-                        A Studio Built on <span className="text-brand-400">Sacred Craft</span>
+                    <h2 className="text-xs tracking-[0.35em] text-brand-500 uppercase font-semibold mb-4">The People</h2>
+                    <h3 className="text-4xl md:text-5xl font-serif text-brand-950 mb-6 leading-tight">
+                        A Studio Built on <span className="text-brand-500">Sacred Craft</span>
                     </h3>
-                    <p className="text-white/70 text-lg md:text-xl leading-relaxed font-light max-w-3xl">
+                    <p className="text-brand-800/70 text-lg md:text-xl leading-relaxed font-medium max-w-3xl">
                         Bin Omair brings together architects, interior designers, and artisan partners who understand spiritual space. We blend traditional craftsmanship with contemporary planning to deliver calm, dignified interiors.
                     </p>
                 </motion.div>
@@ -44,10 +44,10 @@ const Team = () => {
                         className="grid gap-5"
                     >
                         {leaders.map((leader, idx) => (
-                            <div key={idx} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                                <p className="text-white text-lg font-semibold">{leader.name}</p>
-                                <p className="text-brand-400 text-xs uppercase tracking-[0.3em] mt-1">{leader.role}</p>
-                                <p className="text-white/70 text-sm mt-3 leading-relaxed">{leader.focus}</p>
+                            <div key={idx} className="rounded-[20px] neumorph-flat p-6 transition-all group hover:scale-[1.02]">
+                                <p className="text-brand-950 text-lg font-bold tracking-tight">{leader.name}</p>
+                                <p className="text-brand-500 text-[10px] uppercase tracking-[3px] mt-1 font-black">{leader.role}</p>
+                                <p className="text-brand-800/70 text-sm mt-4 leading-relaxed font-medium">{leader.focus}</p>
                             </div>
                         ))}
                     </motion.div>
@@ -58,7 +58,7 @@ const Team = () => {
                         viewport={{ margin: "-50px" }}
                         transition={{ duration: 0.8, delay: 0.25 }}
                     >
-                        <h4 className="text-2xl md:text-3xl font-serif text-brand-400 font-semibold mb-5">
+                        <h4 className="text-2xl md:text-3xl font-serif text-brand-950 font-bold mb-8">
                             Studio Values
                         </h4>
                         <ul className="space-y-4">
@@ -69,11 +69,11 @@ const Team = () => {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ margin: "-50px" }}
                                     transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
-                                    className="flex items-start gap-4 text-white/80 text-base md:text-lg font-light"
+                                    className="flex items-start gap-4 text-brand-800/80 text-base md:text-lg font-medium"
                                 >
-                                    <span className="mt-2 w-2 h-2 rounded-full bg-brand-400 flex-shrink-0" />
+                                    <span className="mt-2.5 w-2 h-2 rounded-full bg-brand-500 flex-shrink-0" />
                                     <div>
-                                        <strong className="font-semibold text-white tracking-wide">{val.name}:</strong> {val.text}
+                                        <strong className="font-bold text-brand-950 tracking-tight">{val.name}:</strong> {val.text}
                                     </div>
                                 </motion.li>
                             ))}

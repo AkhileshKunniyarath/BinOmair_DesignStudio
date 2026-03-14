@@ -44,7 +44,7 @@ const Newsletter = () => {
     };
 
     return (
-        <section className="relative overflow-hidden bg-brand-950 py-20 md:py-28">
+        <section className="relative overflow-hidden neumorph-base py-24 md:py-32">
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-brand-500/5 blur-3xl" />
                 <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-brand-500/5 blur-3xl" />
@@ -57,13 +57,13 @@ const Newsletter = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8 }}
                 >
-                    <p className="text-brand-400 text-xs tracking-[0.35em] uppercase font-semibold mb-4">
+                    <p className="text-brand-500 text-xs tracking-[0.35em] uppercase font-black mb-4">
                         Start a Project
                     </p>
-                    <h2 className="text-4xl md:text-5xl font-serif text-white mb-4 leading-tight">
-                        Share Your <span className="text-brand-400">Design Brief</span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-brand-950 mb-6 leading-tight font-bold">
+                        Share Your <span className="text-brand-500">Design Brief</span>
                     </h2>
-                    <p className="text-white/60 text-lg mb-10 leading-relaxed">
+                    <p className="text-brand-800/70 text-lg mb-10 leading-relaxed font-medium">
                         Tell us about your church, mosque, or villa project. We will follow up with a tailored scope, timeline, and design approach.
                     </p>
 
@@ -74,23 +74,23 @@ const Newsletter = () => {
                             className="flex flex-col items-center gap-3 text-brand-500"
                         >
                             <CheckCircle2 size={48} strokeWidth={1.5} />
-                            <p className="text-xl font-serif text-white">Thank you for reaching out!</p>
-                            <p className="text-white/60 text-sm">We will contact you within 24-48 hours.</p>
+                            <p className="text-xl font-serif text-brand-950 font-bold">Thank you for reaching out!</p>
+                            <p className="text-brand-800/60 text-sm font-medium">We will contact you within 24-48 hours.</p>
                         </motion.div>
                     ) : (
-                        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+                        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-8 max-w-xl mx-auto">
                             <input
                                 type="email"
                                 required
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Your email address"
-                                className="flex-1 px-5 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-brand-400 transition-colors duration-300 text-sm tracking-wide"
+                                className="flex-1 px-8 py-5 rounded-[20px] neumorph-sunken text-brand-950 placeholder-brand-500 focus:outline-none transition-all duration-300 text-sm tracking-wide font-medium"
                             />
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="px-8 py-4 bg-brand-400 text-white text-xs uppercase tracking-[0.3em] font-semibold rounded-full hover:bg-brand-500 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 whitespace-nowrap"
+                                className="px-10 py-5 bg-brand-500 text-white text-[14px] uppercase tracking-[1px] font-black rounded-[20px] shadow-[6px_6px_12px_#a3b1c6,-6px_-6px_12px_#ffffff] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 whitespace-nowrap"
                             >
                                 {loading ? (
                                     <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
@@ -103,7 +103,7 @@ const Newsletter = () => {
                         </form>
                     )}
 
-                    <p className="mt-6 text-white/30 text-xs tracking-wide">
+                    <p className="mt-6 text-brand-500/50 text-xs tracking-wide font-bold">
                         We respect your time. No spam, only project responses.
                     </p>
                 </motion.div>

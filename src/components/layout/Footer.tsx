@@ -2,14 +2,14 @@ import { MapPin, Phone, Mail, ArrowRight, Instagram, Facebook, MessageCircle } f
 
 const Footer = () => {
     return (
-        <footer className="bg-brand-50 border-t border-brand-200/50 pt-12 pb-6">
+        <footer className="neumorph-base pt-12 pb-6 border-none">
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-10">
 
                     {/* Brand Info */}
                     <div className="lg:col-span-1 flex flex-col items-start">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="h-11 w-11 rounded-full bg-brand-500 text-white flex items-center justify-center font-semibold tracking-wide">
+                            <div className="h-11 w-11 rounded-full neumorph-button flex items-center justify-center font-bold text-brand-950 text-xs">
                                 BO
                             </div>
                             <div className="flex flex-col items-start">
@@ -32,7 +32,7 @@ const Footer = () => {
                                 aria-label="Instagram"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                                className="w-10 h-10 rounded-[10px] flex items-center justify-center text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                                 style={{ background: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)" }}
                             >
                                 <Instagram size={18} strokeWidth={2.5} />
@@ -43,7 +43,7 @@ const Footer = () => {
                                 aria-label="Facebook"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                                className="w-10 h-10 rounded-[10px] flex items-center justify-center text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                                 style={{ background: "#1877F2" }}
                             >
                                 <Facebook size={18} strokeWidth={2.5} />
@@ -54,7 +54,7 @@ const Footer = () => {
                                 aria-label="WhatsApp"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                                className="w-10 h-10 rounded-[10px] flex items-center justify-center text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                                 style={{ background: "#25D366" }}
                             >
                                 <MessageCircle size={18} strokeWidth={2.5} />

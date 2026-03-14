@@ -18,110 +18,121 @@ const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
-        <motion.header
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out bg-white/90 backdrop-blur border-b border-brand-200/40 py-3"
-        >
-            <div className="container mx-auto px-6 flex justify-between items-center">
-                {/* Logo Section */}
-                <motion.div
-                    className="flex items-center gap-2 cursor-pointer"
-                    onClick={() => {
-                        if (pathname === '/') {
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                        } else {
-                            router.push('/');
-                        }
-                    }}
-                    whileHover={{ scale: 1.02 }}
-                >
-                    <div className="h-10 w-10 rounded-full bg-brand-500 text-white flex items-center justify-center font-semibold tracking-wide">
-                        BO
-                    </div>
-                    <div className="flex flex-col items-start">
-                        <span className="tracking-widest font-semibold text-base sm:text-lg md:text-xl transition-colors duration-300 leading-none text-brand-950 uppercase">
-                            Bin Omair
-                        </span>
-                        <span className="text-[0.55rem] sm:text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.35em] text-brand-600 font-semibold leading-none">
-                            design studio
-                        </span>
-                    </div>
-                </motion.div>
+        <div className="fixed top-6 left-0 w-full z-50 flex justify-center px-4">
+            <motion.header
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="w-full max-w-[1300px] neumorph-flat rounded-[30px] py-1.5 px-4 sm:px-6"
+            >
+                <div className="flex justify-between items-center">
+                    {/* Logo Section */}
+                    <motion.div
+                        className="flex items-center gap-3 cursor-pointer"
+                        onClick={() => {
+                            if (pathname === '/') {
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                            } else {
+                                router.push('/');
+                            }
+                        }}
+                    >
+                        <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-brand-950 text-white flex items-center justify-center font-bold text-xs">
+                            BO
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="tracking-[0.05em] font-bold text-sm sm:text-base leading-none text-brand-950 uppercase">
+                                Bin Omair
+                            </span>
+                            <span className="text-[0.4rem] sm:text-[0.5rem] uppercase tracking-[0.4em] text-brand-500 font-bold leading-none mt-1">
+                                studio
+                            </span>
+                        </div>
+                    </motion.div>
 
-                {/* Navigation Menu */}
-                <nav className="hidden md:flex gap-10">
-                    {NAV_LINKS.map((link, index) => (
-                        <a
-                            key={link.label}
-                            href={link.href}
-                            onMouseEnter={() => setHoveredIndex(index)}
-                            onMouseLeave={() => setHoveredIndex(null)}
-                            className="relative text-xs uppercase tracking-[0.22em] font-medium transition-colors duration-300 py-2 text-brand-800 hover:text-brand-500"
+                    {/* Navigation Menu */}
+                    <nav className="hidden md:flex gap-10 lg:gap-14">
+                        {NAV_LINKS.map((link, index) => (
+                            <a
+                                key={link.label}
+                                href={link.href}
+                                onMouseEnter={() => setHoveredIndex(index)}
+                                onMouseLeave={() => setHoveredIndex(null)}
+                                className="relative text-[0.6rem] lg:text-[0.7rem] uppercase tracking-[0.25em] font-black transition-colors duration-300 py-1 text-brand-950/70 hover:text-brand-950"
+                            >
+                                {link.label}
+                                {hoveredIndex === index && (
+                                    <motion.div
+                                        layoutId="nav-underline"
+                                        className="absolute -bottom-1 left-0 w-full h-[1.5px] bg-brand-900"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.2 }}
+                                    />
+                                )}
+                            </a>
+                        ))}
+                    </nav>
+
+                    {/* CTA Button */}
+                    <div className="flex items-center gap-4">
+                        <a 
+                            href="/#contact"
+                            className="hidden sm:inline-block px-7 py-3 bg-brand-950 text-white text-[14px] font-black uppercase tracking-[1px] rounded-[10px] hover:bg-black transition-all shadow-md active:scale-95"
                         >
-                            {link.label}
-
-                            {/* Animated Underline */}
-                            <motion.div
-                                className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-500"
-                                initial={{ scaleX: 0, opacity: 0 }}
-                                animate={{
-                                    scaleX: hoveredIndex === index ? 1 : 0,
-                                    opacity: hoveredIndex === index ? 1 : 0
-                                }}
-                                transition={{ duration: 0.3, ease: "easeInOut" }}
-                                style={{ transformOrigin: "left" }}
-                            />
+                            Start a Project
                         </a>
-                    ))}
-                </nav>
 
-                {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden text-brand-950 p-2 z-[60]"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    aria-label="Toggle menu"
-                >
-                    {isMobileMenuOpen ? (
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    ) : (
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="4" y1="12" x2="20" y2="12"></line>
-                            <line x1="4" y1="6" x2="20" y2="6"></line>
-                            <line x1="4" y1="18" x2="20" y2="18"></line>
-                        </svg>
-                    )}
-                </button>
-            </div>
+                        {/* Mobile Menu Button */}
+                        <button
+                            className="md:hidden text-brand-950 p-2"
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                {isMobileMenuOpen ? (
+                                    <>
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </>
+                                ) : (
+                                    <>
+                                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                                    </>
+                                )}
+                            </svg>
+                        </button>
+                    </div>
+                </div>
 
-            {/* Mobile Menu Dropdown */}
-            {isMobileMenuOpen && (
-                <motion.div
-                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full right-4 mt-2 w-56 bg-white rounded-lg shadow-2xl border border-brand-200/40 py-2 md:hidden z-50 transform origin-top-right overflow-hidden"
-                >
-                    <nav className="flex flex-col">
+                {/* Mobile Menu Dropdown */}
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95, y: -10 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        className="absolute top-full left-0 right-0 mt-4 mx-2 bg-white rounded-3xl shadow-2xl border border-brand-50 p-6 md:hidden z-50 flex flex-col gap-4 text-center"
+                    >
                         {NAV_LINKS.map((link) => (
                             <a
                                 key={link.label}
                                 href={link.href}
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="px-6 py-3 text-xs uppercase tracking-[0.2em] font-medium text-brand-900 hover:text-brand-500 hover:bg-brand-50/60 transition-colors duration-200"
+                                className="text-[0.7rem] uppercase tracking-[0.25em] font-black text-brand-950 py-3"
                             >
                                 {link.label}
                             </a>
                         ))}
-                    </nav>
-                </motion.div>
-            )}
-        </motion.header>
+                        <a 
+                            href="/#contact"
+                            className="mt-4 px-6 py-4 bg-brand-900 text-white text-[14px] font-bold uppercase tracking-[1px] rounded-[10px]"
+                        >
+                            Start a Project
+                        </a>
+                    </motion.div>
+                )}
+            </motion.header>
+        </div>
     );
 };
 

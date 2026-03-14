@@ -45,16 +45,32 @@
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .neumorph-base {
+    background: #e0e5ec;
   }
 
-  .glow-effect {
-    box-shadow: 0 0 18px 2px rgba(75, 88, 127, 0.35);
-    transition: box-shadow 0.3s ease;
+  .neumorph-flat {
+    background: #e0e5ec;
+    box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
   }
 
-  .glow-effect:hover {
-    box-shadow: 0 0 28px 5px rgba(75, 88, 127, 0.55);
+  .neumorph-sunken {
+    background: #e0e5ec;
+    box-shadow: inset 6px 6px 12px #a3b1c6, inset -6px -6px 12px #ffffff;
+  }
+
+  .neumorph-button {
+    background: #e0e5ec;
+    box-shadow: 6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff;
+    transition: all 0.2s ease;
+  }
+
+  .neumorph-button:active {
+    box-shadow: inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff;
+    transform: scale(0.98);
+  }
+
+  .premium-shadow {
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.08);
   }
 }
